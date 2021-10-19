@@ -6,8 +6,10 @@
 
 //Code here
 
-
-
+let me = {
+  name: "Casper",
+  age: 23,
+}
 //////////////////////////// PROBLEM 2 ////////////////////////////
 
 //Create an object saved to the variable dog.
@@ -17,7 +19,12 @@
 
 //Code here
 
-
+var dog = {
+  name: "Leo",
+  color: "Brown",
+  age: 5,
+  goodBoy: true,
+}
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
