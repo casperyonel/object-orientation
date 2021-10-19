@@ -31,14 +31,14 @@ var dog = {
 
 //Code here
 
-
+console.log(dog.name)
 
 //////////////////////////// PROBLEM 4 ////////////////////////////
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
 
-
+console.log(dog["color"])
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
 /*
@@ -48,12 +48,24 @@ var dog = {
 
 //Code here
 
+let favoriteThings = {
+  band: "Flume",
+  food: "Cereal",
+  person: "Becky",
+  book: "sapiens",
+  movie: "A Beautiful Mind",
+  holiday: "Christmas",
+}
 
 /*
   After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
 */
 
 //Code here
+
+favoriteThings.car = "Rav4"
+favoriteThings.show = "Breaking Bad"
+
 
 
 /*
@@ -63,6 +75,10 @@ var dog = {
 
 //Code here
 
+favoriteThings.food = "Chicken Nuggets"
+favoriteThings.book = "Harry Potter"
+
+// console.log(favoriteThings)
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -81,7 +97,12 @@ var carDetails = {
 
 //Code Here
 
+let {color, make, model, year} = carDetails
 
+// console.log(color)
+// console.log(make)
+// console.log(model)
+// console.log(year)
 
 //////////////////////////// PROBLEM 7 ////////////////////////////
 
@@ -91,15 +112,22 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting() {
   //Code Here
-  
+  let {firstName, lastName, title} = obj
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
 
+let obj = {
+  firstName: "Casper",
+  lastName: "Yonel",
+  title: "Mr.",
+}
 
+console.log(greeting(obj))
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
 
@@ -113,7 +141,22 @@ function greeting( obj ) {
 
 //Code Here
 
+function totalPopulation() {
+  let {utah} = object2
+  let {california} = object2
+  let {texas} = object2
+  let {arizona} = object2
+  return utah + california + texas + arizona
+}
 
+let object2 = {
+  utah: 4,
+  california: 5, 
+  texas: 6,
+  arizona: 7,
+}
+
+console.log(totalPopulation(object2))
 
 //////////////////////////// PROBLEM 9 ////////////////////////////
 
@@ -127,6 +170,20 @@ function greeting( obj ) {
 
 //Code Here
 
+function ingredients() {
+  let {carb, fat, protein} = newObject
+  let newArray = []
+  newArray.push(carb, fat, protein)
+  return newArray
+}
+
+let newObject = {
+  carb: "A lot",
+  fat: "Some",
+  protein: "None",
+}
+
+console.log(ingredients(newObject))
 
 
 //////////////////////////// PROBLEM 10 ////////////////////////////
@@ -149,6 +206,8 @@ var user = {
 
 //Code Here
 
+user.name = "Bryan G. Smith"
+user.email = "bryan.smith@devmounta.in"
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -156,6 +215,10 @@ var user = {
 */
 
 //Code Here
+
+delete user.age
+
+// console.log(user)
 
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
@@ -167,7 +230,17 @@ var user = {
 
 //Code here
 
+class Cat {
+  constructor(name, age, color) {
+    this.name = name
+    this.age = age
+    this.color = color
+  }
+}
 
+let cat1 = new Cat("Diamond", "RIP", "Black")
+
+console.log(cat1.name)
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -178,6 +251,21 @@ var user = {
 */
 
 //Code here
+
+class Wizard {
+  constructor(name, age, favoriteSpell) {
+    this.name = name
+    this.age = age
+    this.favoriteSpell = favoriteSpell
+  }
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`)
+  }
+}
+
+let wizardObject = new Wizard("Harry", 24, "Expelliarmus")
+
+wizardObject.castSpell()
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -204,18 +292,43 @@ var user = {
 
 //Code Here
 
-  
+class Phone {
+  constructor(brand, model, storage, color, price){
+    this.brand = brand
+    this.model = model
+    this.storage = storage
+    this.color = color
+    this.price = price
+    this.sold = false
+  }
+  sell() {
+    this.sold = true
+    console.log(`${this.brand} ${this.model} has been sold`)
+  }
+  changePrice(newPrice) {
+    this.price = newPrice
+  }
+}
+
 /*
-    Next make three new phone instances using your class.
-    Send in values of your choice. They should match these data types:
-    - brand: string
-    - model: string
-    - storage: number
-    - color: string
-    - price: number
+Next make three new phone instances using your class.
+Send in values of your choice. They should match these data types:
+- brand: string
+- model: string
+- storage: number
+- color: string
+- price: number
 */
 
 //Code Here
+
+let iPhone12 = new Phone("iPhone12", "12", 64, "White", 499)
+let iPhone13 = new Phone("iPhone13", "13", 36, "Black", 699)
+let iPhone14 = new Phone("iPhone14", "35", 60, "Grey", 599)
+
+iPhone12.sell()
+iPhone13.sell()
+iPhone14.sell()
 
 /* 
   Call the changePrice function on one of your phones, 
@@ -226,6 +339,9 @@ var user = {
 
 //Code Here 
 
+iPhone12.changePrice(335)
+
+console.log(iPhone12.price)
 
 /*
   Now call the sell method on one of your other phone objects
@@ -234,6 +350,10 @@ var user = {
 */
 
 //Code Here 
+
+iPhone12.sell()
+
+console.log(iPhone12.sold)
 
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
@@ -253,8 +373,11 @@ const colors = {
 //do not edit this object
 
 //Code Here 
+let colorsCopy = {
+  ...colors
+}
 
-
+console.log(colorsCopy)
 
 /*
  Now use the spread operator to combine the following 2 objects into one. 
@@ -281,6 +404,11 @@ const shippingInfo = {
 //do not edit the objects above
 
 //Code Here
+let helensinfo = {
+  ...contactInfo, ...shippingInfo
+}
+
+console.log(helensinfo)
 
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
@@ -300,13 +428,28 @@ const shippingInfo = {
 
 //Code Here 
 
+class Vehicle {
+  constructor(capacity, color, mileage) {
+    this.capacity = capacity
+    this.color = color
+    this.mileage = mileage
+  }
+  move(miles) {
+    this.mileage += miles
+    console.log(this.mileage)
+  }
+}
+
 
 /*
-  Create a vehicle using your new class and save it to a variable called myFirstVehicle
+Create a vehicle using your new class and save it to a variable called myFirstVehicle
 */
 
 //Code Here
 
+let myFirstVehicle = new Vehicle(3150, "Blue", 45)
+
+myFirstVehicle.move(20)
 
 /* 
   Now we'll create a class that's based off of the vehicle class. 
@@ -318,6 +461,10 @@ const shippingInfo = {
 */
 
 //Code Here
+
+class Motorcycle extends Vehicle {
+  
+}
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
