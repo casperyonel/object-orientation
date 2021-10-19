@@ -417,10 +417,10 @@ let helensinfo = {
   ...contactInfo, ...shippingInfo
 }
 
-console.log(helensinfo)
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
+console.log(helensinfo)
 
 //////////////////////////// PROBLEM 16 ////////////////////////////
 
