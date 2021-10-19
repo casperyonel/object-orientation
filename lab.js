@@ -379,6 +379,15 @@ let colorsCopy = {
 
 console.log(colorsCopy)
 
+
+newArray = [1, 2, 3, 4, 5, 6]
+
+function newFunction(x, y, z){
+  return x + y + z
+}
+
+console.log(newFunction(...newArray))
+
 /*
  Now use the spread operator to combine the following 2 objects into one. 
  Call the new variable helensInfo. 
@@ -409,7 +418,6 @@ let helensinfo = {
 }
 
 console.log(helensinfo)
-
 
 //Print helensInfo to see what it looks like, there should be no repeating properties.
 
@@ -463,18 +471,28 @@ myFirstVehicle.move(20)
 //Code Here
 
 class Motorcycle extends Vehicle {
-  
+  constructor(capacity, color, mileage, make, isCool) {
+    super(capacity, color, mileage)
+    this.make = make
+    this.isCool = isCool
+  }
 }
 
 /*
   Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
 */
 
+
 //Code Here 
 
+let myFirstMotorcycle = new Motorcycle(4, "Black", 35, 2016, true)
+
+
 /*
-  Call the move function on myFirstMotorcycle (don't forget the parameter)
+Call the move function on myFirstMotorcycle (don't forget the parameter)
 */
+
+myFirstMotorcycle.move(30)
 
 /*
   Let's make another class based off of Vehicle. 
@@ -493,6 +511,24 @@ class Motorcycle extends Vehicle {
 
 //Code Here
 
+class Boat extends Vehicle {
+  constructor(capacity, color, mileage, name, type, isSeaworthy){
+    super(capacity, color, mileage)
+    this.name = name
+    this.type = type
+    this.isSeaworthy = isSeaworthy
+  }
+  checkSeaworthiness() {
+    if (this.isSeaworthy === true){
+      console.log(`The ${this.color} ${this.type} ${this.name} is seaworthy!`)
+    } else {
+      console.log(`You need to get your ${this.type} in shape!`)
+    }
+  }
+  performMaintenance() {
+    return this.isSeaworthy = true
+  }
+}
 
 /*
   Create a new boat using your class. You can choose whatever values you like for all the 
@@ -501,11 +537,17 @@ class Motorcycle extends Vehicle {
 
 //Code Here
 
+let myFristBoat = new Boat(100, "Green", 44, "The Black Boat", "Speed", false)
+
+console.log(myFristBoat.performMaintenance())
+
 /*
   Call the checkSeaworthiness method on your new boat
 */
 
 //Code Here
+
+myFristBoat.checkSeaworthiness()
 
 /*
   Now run the performMaintenance method on your boat
@@ -513,8 +555,12 @@ class Motorcycle extends Vehicle {
 
 //Code Here 
 
+myFristBoat.performMaintenance()
+
 /*
   Check the seaworthiness once more (you should be ready for the water!)
 */
 
 //Code Here
+
+myFristBoat.checkSeaworthiness()
